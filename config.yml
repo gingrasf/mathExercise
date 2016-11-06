@@ -1,0 +1,7 @@
+logging:
+  level: INFO
+  loggers:
+    fgingras: DEBUG
+
+server:
+  rootPath: /api/
