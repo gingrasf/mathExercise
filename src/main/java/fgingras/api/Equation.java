@@ -8,6 +8,7 @@ public class Equation {
     private int firstTerm;
     private int secondTerm;
     private int answer;
+    private String userFriendlyAnswer;
 
     public Equation() {
     }
@@ -23,6 +24,7 @@ public class Equation {
         this.firstTerm = firstTerm;
         this.secondTerm = secondTerm;
         this.answer = answer;
+        this.userFriendlyAnswer = (answer == Integer.MIN_VALUE) ? "" : Integer.toString(answer);
     }
 
     public static Equation fromConfig(WorkSheetConfig config) {
@@ -102,5 +104,13 @@ public class Equation {
 
     public void setAnswer(int answer) {
         this.answer = answer;
+    }
+
+    public String getUserFriendlyAnswer() {
+        return userFriendlyAnswer;
+    }
+
+    public void setUserFriendlyAnswer(String userFriendlyAnswer) {
+        this.userFriendlyAnswer = userFriendlyAnswer;
     }
 }

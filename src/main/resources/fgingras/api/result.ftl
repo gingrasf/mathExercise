@@ -32,7 +32,7 @@
                 ${res.equation.secondTerm?c}</td>
                 </td>
                 <td class="result">
-                  ${res.equation.answer?c}
+                  ${res.equation.userFriendlyAnswer}
                 </td>
                 <td class="result">
                   ${res.correctAnswer?c}
