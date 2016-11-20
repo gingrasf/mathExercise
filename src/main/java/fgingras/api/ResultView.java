@@ -28,7 +28,10 @@ public class ResultView extends View {
         return new WorkSheetResult(computeTotalTime(workSheet.getStart()), workSheet.getEquations().stream().map(eq->eq.resolve()).collect(Collectors.toList()));
     }
 
-    private long computeTotalTime(long start) {
+    private Long computeTotalTime(Long start) {
+        if(start == null) {
+            return null;
+        }
         Instant startInstant = Instant.ofEpochMilli(start);
         return (Instant.now().toEpochMilli() - startInstant.toEpochMilli());
     }

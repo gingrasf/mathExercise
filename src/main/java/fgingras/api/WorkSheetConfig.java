@@ -3,7 +3,8 @@ package fgingras.api;
 
 public class WorkSheetConfig {
 
-    public static WorkSheetConfig DEFAULT = new WorkSheetConfig(20, 20, 9);
+    public static WorkSheetConfig THIRD_LEVEL = new WorkSheetConfig(20, 20, 12);
+    public static WorkSheetConfig FIRST_LEVEL = new WorkSheetConfig(20, 10, 10);
 
     private int equationsCount = 20;
     private int maxNumber = 20;

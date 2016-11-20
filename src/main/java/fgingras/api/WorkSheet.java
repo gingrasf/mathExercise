@@ -11,29 +11,30 @@ import java.util.stream.IntStream;
 import static java.util.stream.Collectors.toList;
 
 public class WorkSheet {
-    private long start;
+    private Long start;
     private WorkSheetConfig config;
     private List<Equation> equations;
+    private WorkSheetOptions options;
 
-    public WorkSheet() {
-    }
-
-    public WorkSheet(long start, List<Equation> equations) {
+    public WorkSheet(Long start, List<Equation> equations) {
         this.start = start;
         this.equations = equations;
     }
 
-    public WorkSheet(WorkSheetConfig config) {
+    public WorkSheet(WorkSheetConfig config, WorkSheetOptions options) {
         this.config = config;
         this.equations = generateEquations(config);
-        start = Instant.now().toEpochMilli();
+        this.options = options;
+        if (options.isTime()) {
+            start = Instant.now().toEpochMilli();
+        }
     }
 
-    public long getStart() {
+    public Long getStart() {
         return start;
     }
 
-    public void setStart(long start) {
+    public void setStart(Long start) {
         this.start = start;
     }
 

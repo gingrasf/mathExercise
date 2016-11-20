@@ -26,7 +26,11 @@ public class ResultResource {
     }
 
     private WorkSheet toWorkSheet(MultivaluedMap<String, String> workSheet) {
-        return new WorkSheet(Long.valueOf(workSheet.getFirst("start")), toEquationList(workSheet));
+        return new WorkSheet(safelyAssignStartTime(workSheet), toEquationList(workSheet));
+    }
+
+    private Long safelyAssignStartTime(MultivaluedMap<String, String> workSheet) {
+        return workSheet.getFirst("start") == null ? null : Long.valueOf(workSheet.getFirst("start"));
     }
 
     private List<Equation> toEquationList(MultivaluedMap<String, String> workSheet) {

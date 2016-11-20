@@ -7,8 +7,10 @@
     <body onload="init()">
         <h1>Exercices</h1>
         <form action="/api/math/result" method="post">
+        <#if workSheet.start??>
             <input type="hidden" name="start" value="${workSheet.start?c}">
-            <table style="width:50%;font-size:1em">
+        </#if>
+           <table style="width:50%;font-size:1em">
            <#list workSheet.equations as equation>
               <tr>
                 <input type="hidden" name="operation" value="${equation.operation}">

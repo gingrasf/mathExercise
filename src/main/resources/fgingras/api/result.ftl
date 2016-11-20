@@ -6,9 +6,11 @@
     </head>
     <body>
         <h1>Resultats</h1>
+        <#if result.totalTime??>
         <p class="result-label">
         <strong>Temps Total: </strong>  ${result.totalTime?c} secondes
         </p>
+        </#if>
         <p class="result-label">
         <strong>Note: </strong>  ${result.score?c} points !
         </p>
